@@ -4,15 +4,17 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>{{ $title ?? 'AAAAAAAAAAA' }}</title>
+        <title>{{ $title ?? 'Banana Store Badminton' }}</title>
         @vite(['resources/css/app.css', 'resource/js/app.js'])
         @livewireStyles
     </head>
     <body class="bg-slate-200 dark:bg-slate-700">
+        @livewire('partials.navbar')
         <main>
             {{ $slot }}
         </main>
-
+        @livewire('partials.footer')
+        
         @livewireScripts
     </body>
 </html>
