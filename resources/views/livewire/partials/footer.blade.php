@@ -4,7 +4,7 @@
         <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
             <div class="col-span-full lg:col-span-1">
                 <a class="flex-none text-xl font-semibold text-white dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                    href="#" aria-label="Brand">DCodeMania</a>
+                    href="#" aria-label="Brand">BananaStore</a>
             </div>
             <!-- End Col -->
 
@@ -48,7 +48,7 @@
                                 class="py-3 px-4 block w-full border-transparent rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-transparent dark:text-gray-400 dark:focus:ring-gray-600"
                                 placeholder="Enter your email">
                         </div>
-                        <a class="w-full sm:w-auto whitespace-nowrap p-3 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                        <a class="w-full sm:w-auto whitespace-nowrap p-3 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-yellow-400 text-white hover:bg-yellow-500 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                             href="#">
                             Subscribe
                         </a>
@@ -62,7 +62,7 @@
 
         <div class="mt-5 sm:mt-12 grid gap-y-2 sm:gap-y-0 sm:flex sm:justify-between sm:items-center">
             <div class="flex justify-between items-center">
-                <p class="text-sm text-gray-400">© 2024 DCodeMania. All rights reserved.</p>
+                <p class="text-sm text-gray-400">© 2024 NguyenAnhQuan. All rights reserved.</p>
             </div>
             <!-- End Col -->
 

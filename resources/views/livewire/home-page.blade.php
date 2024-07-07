@@ -6,7 +6,7 @@
                 <div>
                     <h1
                         class="block text-3xl font-bold text-gray-800 sm:text-4xl lg:text-6xl lg:leading-tight dark:text-white">
-                        Start your journey with <span class="text-yellow-400">QuanBanana</span></h1>
+                        Welcome to my <span class="text-yellow-400">BananaStore</span></h1>
                     <p class="mt-3 text-lg text-gray-800 dark:text-gray-400">Purchase wide varities of electronics
                         products
                         like Smartphones, Laptops, Smartwatches, Television and many more.</p>
@@ -198,19 +198,19 @@
     </div>
 
     {{-- Brand section start --}}
-    <section class="py-20">
+    <section class="py-20 bg-yellow-100">
         <div class="max-w-xl mx-auto">
             <div class="text-center ">
                 <div class="relative flex flex-col items-center">
-                    <h1 class="text-5xl font-bold dark:text-gray-200"> Browse Popular<span class="text-blue-500">
+                    <h1 class="text-5xl font-bold dark:text-gray-200"> Browse Popular<span class="text-yellow-400">
                             Brands
                         </span> </h1>
                     <div class="flex w-40 mt-2 mb-6 overflow-hidden rounded">
-                        <div class="flex-1 h-2 bg-blue-200">
+                        <div class="flex-1 h-2 bg-yellow-200">
                         </div>
-                        <div class="flex-1 h-2 bg-blue-400">
+                        <div class="flex-1 h-2 bg-yellow-400">
                         </div>
-                        <div class="flex-1 h-2 bg-blue-600">
+                        <div class="flex-1 h-2 bg-yellow-600">
                         </div>
                     </div>
                 </div>
@@ -244,18 +244,18 @@
     {{-- Brand section end --}}
 
     {{-- Category section start --}}
-    <div class="bg-orange-200 py-20">
+    <div class="bg-yellow-100 py-20">
         <div class="max-w-xl mx-auto">
             <div class="text-center ">
                 <div class="relative flex flex-col items-center">
-                    <h1 class="text-5xl font-bold dark:text-gray-200"> Browse <span class="text-blue-500"> Categories
+                    <h1 class="text-5xl font-bold dark:text-gray-200"> Browse <span class="text-yellow-400"> Categories
                         </span> </h1>
                     <div class="flex w-40 mt-2 mb-6 overflow-hidden rounded">
-                        <div class="flex-1 h-2 bg-blue-200">
+                        <div class="flex-1 h-2 bg-yellow-200">
                         </div>
-                        <div class="flex-1 h-2 bg-blue-400">
+                        <div class="flex-1 h-2 bg-yellow-400">
                         </div>
-                        <div class="flex-1 h-2 bg-blue-600">
+                        <div class="flex-1 h-2 bg-yellow-600">
                         </div>
                     </div>
                 </div>
@@ -304,20 +304,20 @@
     {{-- Category section end --}}
 
     {{-- Customer review start --}}
-    <section class="py-14 font-poppins dark:bg-gray-800">
+    <section class="py-14 font-poppins bg-yellow-100">
         <div class="max-w-6xl px-4 py-6 mx-auto lg:py-4 md:px-6">
             <div class="max-w-xl mx-auto">
                 <div class="text-center ">
                     <div class="relative flex flex-col items-center">
-                        <h1 class="text-5xl font-bold dark:text-gray-200"> Customer <span class="text-blue-500">
+                        <h1 class="text-5xl font-bold dark:text-gray-200"> Customer <span class="text-yellow-500">
                                 Reviews
                             </span> </h1>
                         <div class="flex w-40 mt-2 mb-6 overflow-hidden rounded">
-                            <div class="flex-1 h-2 bg-blue-200">
+                            <div class="flex-1 h-2 bg-yellow-200">
                             </div>
-                            <div class="flex-1 h-2 bg-blue-400">
+                            <div class="flex-1 h-2 bg-yellow-400">
                             </div>
-                            <div class="flex-1 h-2 bg-blue-600">
+                            <div class="flex-1 h-2 bg-yellow-600">
                             </div>
                         </div>
                     </div>
