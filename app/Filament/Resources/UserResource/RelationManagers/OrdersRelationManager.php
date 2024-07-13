@@ -38,7 +38,7 @@ class OrdersRelationManager extends RelationManager
                     ->searchable(),
 
                 TextColumn::make('grand_total')
-                    ->money('VND'),
+                    ->money('USD'),
 
                 TextColumn::make('status')
                     ->badge()

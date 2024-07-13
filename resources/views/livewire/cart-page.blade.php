@@ -78,7 +78,7 @@
                         <span class="font-semibold"> {{ Number::currency($grand_total, 'USD') }} </span>
                     </div>
                     @if($cart_items)
-                        <button class="bg-yellow-400 hover:bg-yellow-500 text-white py-2 px-4 rounded-lg mt-4 w-full">Checkout</button>
+                        <a href="/checkout" class="bg-yellow-400 block text-center hover:bg-yellow-500 text-white py-2 px-4 rounded-lg mt-4 w-full">Checkout</a>
                     @endif
                 </div>
             </div>
