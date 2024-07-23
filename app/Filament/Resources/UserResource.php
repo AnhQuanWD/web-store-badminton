@@ -48,6 +48,11 @@ class UserResource extends Resource
                     ->password()
                     ->dehydrated(fn($state) => filled($state))
                     ->required(fn(Page $livewire): bool => $livewire instanceof CreateRecord),
+                Forms\Components\Select::make('roles')
+                    ->relationship('roles', 'name')
+                    ->multiple()
+                    ->preload()
+                    ->searchable()
             ]);
     }
 
@@ -64,7 +69,12 @@ class UserResource extends Resource
                     ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
-                    ->sortable()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('roles')
+                    ->searchable()
+                    ->getStateUsing(function ($record) {
+                        return $record->roles->pluck('name')->implode(', ');
+                    }),
             ])
             ->filters([
                 //
