@@ -19,5 +19,22 @@ use Illuminate\Support\Facades\Route;
 // });
 
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\ForgotPasswordController;
+use App\Http\Controllers\Api\ProductController;
+use App\Http\Controllers\Api\ProductsDetailController;
+use App\Http\Controllers\Api\OrderController;
+use App\Http\Controllers\Api\OrderItemController;
 
-Route::post('register', [AuthController::class, 'register']);
+// Route::post('/register', [AuthController::class, 'register']);
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/password/forgot', [ForgotPasswordController::class, 'sendResetLinkEmail']);
+Route::post('/password/reset', [ForgotPasswordController::class, 'resetPassword']);
+
+Route::get('/products', [ProductController::class, 'index']);
+Route::get('/products/{id}', [ProductsDetailController::class, 'show']);
+
+Route::post('/orders', [OrderController::class, 'store']);
+Route::get('/orders/{userId}', [OrderItemController::class, 'index']);
+
+

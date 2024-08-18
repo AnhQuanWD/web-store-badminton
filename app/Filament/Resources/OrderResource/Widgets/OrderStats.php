@@ -6,6 +6,7 @@ use App\Models\Order;
 use Filament\Widgets\StatsOverviewWidget as BaseWidget;
 use Filament\Widgets\StatsOverviewWidget\Stat;
 use Illuminate\Support\Number;
+use Filament\Widgets\StatsOverviewWidget\Card;
 
 class OrderStats extends BaseWidget
 {
@@ -15,7 +16,8 @@ class OrderStats extends BaseWidget
             Stat::make('New Orders', Order::query()->where('status', 'new')->count()),
             Stat::make('Order Processing', Order::query()->where('status', 'processing')->count()),
             Stat::make('Order Shipped', Order::query()->where('status', 'shipped')->count()),
-            Stat::make('Average Price', Number::currency(Order::query()->avg('grand_total'), 'usd')),
+            // Stat::make('Average Price', Number::currency(Order::query()->avg('grand_total'), 'usd')),
+            Card::make('Total Price', '$' . number_format(Order::query()->sum('grand_total'), 2)),
         ];
     }
 }
