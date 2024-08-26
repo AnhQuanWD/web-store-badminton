@@ -15,6 +15,7 @@ use App\Livewire\ProductDetailPage;
 use App\Livewire\ProductsPage;
 use App\Livewire\SuccessPage;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\VNPayController;
 
 /*
 |--------------------------------------------------------------------------

@@ -2,8 +2,17 @@
     <section class="py-10 bg-gray-50 font-poppins dark:bg-gray-800 rounded-lg">
         <div class="px-4 py-4 mx-auto max-w-7xl lg:py-6 md:px-6">
             <div class="flex flex-wrap mb-24 -mx-3">
-                <div class="w-full pr-2 lg:w-1/4 lg:block">
-                    <div class="p-4 mb-5 bg-white border border-gray-200 dark:border-gray-900 dark:bg-gray-900">
+                <div class="w-full lg:w-4/4 mb-3 flex items-center" style="padding: 0 24px;">
+                    <input type="search" class="search-input">
+                    <button style="width: 10%;height: 100%;">
+                        <i class="fa-solid fa-magnifying-glass icon-search bg-yellow-400"></i>
+                    </button>
+                </div>
+                <div class="w-full lg:w-4/4 mb-3" style="padding: 0 24px;">
+                    <button class="bg-yellow-400 button-filter"> Advanced filters </button>
+                </div>
+                <div class="w-full lg:w-4/4 flex container-filter" style="display:none;padding: 0 24px;">
+                    <div class="p-4 mb-5 bg-white border border-gray-200 dark:border-gray-900 dark:bg-gray-900" style="width:25%;">
                         <h2 class="text-2xl font-bold dark:text-gray-400"> Categories</h2>
                         <div class="w-16 pb-2 mb-6 border-b border-rose-600 dark:border-gray-400"></div>
                         <ul>
@@ -19,7 +28,7 @@
                         </ul>
 
                     </div>
-                    <div class="p-4 mb-5 bg-white border border-gray-200 dark:bg-gray-900 dark:border-gray-900">
+                    <div class="p-4 mb-5 bg-white border border-gray-200 dark:bg-gray-900 dark:border-gray-900" style="width:25%;">
                         <h2 class="text-2xl font-bold dark:text-gray-400">Brand</h2>
                         <div class="w-16 pb-2 mb-6 border-b border-rose-600 dark:border-gray-400"></div>
                         <ul>
@@ -34,7 +43,7 @@
 
                         </ul>
                     </div>
-                    <div class="p-4 mb-5 bg-white border border-gray-200 dark:bg-gray-900 dark:border-gray-900">
+                    <div class="p-4 mb-5 bg-white border border-gray-200 dark:bg-gray-900 dark:border-gray-900" style="width:25%;">
                         <h2 class="text-2xl font-bold dark:text-gray-400">Product Status</h2>
                         <div class="w-16 pb-2 mb-6 border-b border-rose-600 dark:border-gray-400"></div>
                         <ul>
@@ -52,23 +61,22 @@
                             </li>
                         </ul>
                     </div>
-
-                    <div class="p-4 mb-5 bg-white border border-gray-200 dark:bg-gray-900 dark:border-gray-900">
+                    <div class="p-4 mb-5 bg-white border border-gray-200 dark:bg-gray-900 dark:border-gray-900" style="width:25%;">
                         <h2 class="text-2xl font-bold dark:text-gray-400">Price</h2>
                         <div class="w-16 pb-2 mb-6 border-b border-rose-600 dark:border-gray-400"></div>
                         <div>
-                            <div class="font-semibold"> {{ Number::currency($price_range, 'USD') }} </div>
+                            <div class="font-semibold"> {{ Number::currency($price_range, 'VND') }} </div>
                             <input wire:model.live="price_range" type="range"
                                 class="w-full h-1 mb-4 bg-yellow-100 rounded appearance-none cursor-pointer"
                                 max="10000" value="200" step="10">
                             <div class="flex justify-between ">
-                                <span class="inline-block text-lg font-bold text-yellow-400 "> {{ Number::currency(10, 'USD') }} </span>
-                                <span class="inline-block text-lg font-bold text-yellow-400 "> {{ Number::currency(10000, 'USD') }} </span>
+                                <span class="inline-block text-lg font-bold text-yellow-400 "> {{ Number::currency(10, 'VND') }} </span>
+                                <span class="inline-block text-lg font-bold text-yellow-400 "> {{ Number::currency(10000, 'VND') }} </span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="w-full px-3 lg:w-3/4">
+                <div class="w-full px-3 lg:w-4/4">
                     <div class="px-3 mb-4">
                         <div
                             class="items-center justify-between hidden px-3 py-2 bg-gray-100 md:flex dark:bg-gray-900 ">
@@ -84,7 +92,7 @@
                     <div class="flex flex-wrap items-center ">
 
                         @foreach ($products as $product)
-                            <div class="w-full px-3 mb-6 sm:w-1/2 md:w-1/3" wire:key="{{ $product->id }}">
+                            <div class="w-full px-3 mb-6 sm:w-1/2 md:w-1/4" wire:key="{{ $product->id }}">
                                 <div class="border border-gray-300 dark:border-gray-700">
                                     <div class="relative bg-gray-200">
                                         <a href="/products/{{ $product->slug }}" class="">
@@ -100,7 +108,7 @@
                                         </div>
                                         <p class="text-lg ">
                                             <span class="text-green-600 dark:text-green-600">
-                                                {{ Number::currency($product->price, 'USD') }}
+                                                {{ number_format($product->price, 0, ',', '.') }}đ
                                             </span>
                                         </p>
                                     </div>

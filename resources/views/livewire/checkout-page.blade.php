@@ -104,7 +104,7 @@
                     <div class="text-lg font-semibold mb-4">
                         Select Payment Method
                     </div>
-                    <ul class="grid w-full gap-6 md:grid-cols-2">
+                    <ul class="grid w-full gap-6 md:grid-cols-3">
                         <li>
                             <input wire:model='payment_method' class="hidden peer" id="hosting-small" required=""
                                 type="radio" value="cod" />
@@ -144,6 +144,26 @@
                             </label>
                             </input>
                         </li>
+                        <li>
+                            <input wire:model='payment_method' class="hidden peer" id="vn-pay" type="radio"
+                                value="vnpay">
+                            <label
+                                class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
+                                for="vn-pay">
+                                <div class="block">
+                                    <div class="w-full text-lg font-semibold">
+                                        VN PAY
+                                    </div>
+                                </div>
+                                <svg aria-hidden="true" class="w-5 h-5 ms-3 rtl:rotate-180" fill="none"
+                                    viewbox="0 0 14 10" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2">
+                                    </path>
+                                </svg>
+                            </label>
+                            </input>
+                        </li>
                     </ul>
                     @error('payment_method')
                         <div class='text-red-500 text-sm'>{{ $message }}</div>
@@ -161,7 +181,7 @@
                             Subtotal
                         </span>
                         <span>
-                            {{ Number::currency($grand_total, 'USD') }}
+                            {{ number_format($grand_total, 0, ',', '.') }}đ
                         </span>
                     </div>
                     <div class="flex justify-between mb-2 font-bold">
@@ -169,7 +189,7 @@
                             Taxes
                         </span>
                         <span>
-                            {{ Number::currency(0, 'USD') }}
+                            {{ number_format(0, 0, ',', '.') }}đ
                         </span>
                     </div>
                     <div class="flex justify-between mb-2 font-bold">
@@ -177,7 +197,7 @@
                             Shipping Cost
                         </span>
                         <span>
-                            {{ Number::currency(0, 'USD') }}
+                            {{ number_format(0, 0, ',', '.') }}đ
                         </span>
                     </div>
                     <hr class="bg-slate-400 my-4 h-1 rounded">
@@ -186,7 +206,7 @@
                             Grand Total
                         </span>
                         <span>
-                            {{ Number::currency($grand_total, 'USD') }}
+                            {{ number_format($grand_total, 0, ',', '.') }}đ
                         </span>
                     </div>
                     </hr>
@@ -220,7 +240,8 @@
                                     </div>
                                     <div
                                         class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                                        {{ Number::currency($ci['total_amount'], 'USD') }}
+                                        {{ number_format($ci['total_amount'], 0, ',', '.') }}đ
+                                        {{-- {{ Number::currency($ci['total_amount'], 'VND') }} --}}
                                     </div>
                                 </div>
                             </li>

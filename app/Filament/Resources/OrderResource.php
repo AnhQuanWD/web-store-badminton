@@ -57,7 +57,8 @@ class OrderResource extends Resource
                         Select::make('payment_method')
                             ->options([
                                 'stripe' => 'Stripe',
-                                'cod' => 'Cash on Delivery'
+                                'cod' => 'Cash on Delivery',
+                                'vnpay' => 'VN Pay',
                             ])
                             ->required(),
 
@@ -98,13 +99,10 @@ class OrderResource extends Resource
                         
                         Select::make('currency')
                             ->options([
-                                'usd' => 'USD',
                                 'vnd' => 'VND',
-                                'inr' => 'INR',
-                                'eur' => 'EUR',
-                                'gbp' => 'GBP',
+                                'usd' => 'USD',
                             ])
-                            ->default('usd')
+                            ->default('vnd')
                             ->required(),
 
                         Select::make('shipping_method')
@@ -172,7 +170,7 @@ class OrderResource extends Resource
                                         $total += $get("items.{$key}.total_amount");
                                     }
                                     $set('grand_total', $total);
-                                    return Number::currency($total, 'USD');
+                                    return Number::currency($total, 'VND');
                                 }),
 
                             Hidden::make('grand_total')
@@ -194,7 +192,7 @@ class OrderResource extends Resource
                 TextColumn::make('grand_total')
                     ->numeric()
                     ->sortable()
-                    ->money('USD'),
+                    ->money('VND'),
 
                 TextColumn::make('payment_method')
                     ->sortable()

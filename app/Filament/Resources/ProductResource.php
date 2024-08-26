@@ -81,7 +81,7 @@ class ProductResource extends Resource
                         TextInput::make('price')
                             ->numeric()
                             ->required()
-                            ->prefix('USD')
+                            ->prefix('VND')
                     ]),
 
                     Section::make('Associations')->schema([
@@ -131,7 +131,7 @@ class ProductResource extends Resource
                     ->sortable(),
 
                 TextColumn::make('price')
-                    ->money('USD')
+                    ->money('VND')
                     ->sortable(),
                 
                 IconColumn::make('is_featured')

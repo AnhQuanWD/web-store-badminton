@@ -71,7 +71,7 @@ class ProductsPage extends Component
         }
 
         if ($this->price_range) {
-            $productsQuery->whereBetween('price', [0, $this->price_range]);
+            $productsQuery->whereBetween('price', [0, 1000000000]);
         }
 
         if ($this->sort == 'latest') {
@@ -83,7 +83,7 @@ class ProductsPage extends Component
         }
 
         return view('livewire.products-page', [
-            'products' => $productsQuery->paginate(6),
+            'products' => $productsQuery->paginate(8),
             'brands' => Brand::where('is_active', 1,)->get(['id', 'name', 'slug']),
             'categories' => Category::where('is_active', 1)->get(['id', 'name', 'slug']),
         ]);

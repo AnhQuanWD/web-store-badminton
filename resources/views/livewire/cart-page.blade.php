@@ -26,7 +26,7 @@
                                         </div>
                                     </td>
                                     <td class="py-4">
-                                        {{ Number::currency($item['unit_amount'], 'USD') }}
+                                        {{ number_format($item['unit_amount'], 0, ',', '.') }}đ
                                     </td>
                                     <td class="py-4">
                                         <div class="flex items-center">
@@ -36,7 +36,7 @@
                                         </div>
                                     </td>
                                     <td class="py-4">
-                                        {{ Number::currency($item['total_amount'], 'USD') }}
+                                        {{ number_format($item['total_amount'], 0, ',', '.') }}đ
                                     </td>
                                     <td><button wire:click='removeItem({{ $item['product_id'] }})'
                                             class="bg-yellow-400 border-2 border-yellow-400 rounded-lg px-3 py-1 hover:bg-yellow-500 hover:text-white hover:border-yellow-500">
@@ -62,20 +62,22 @@
                     <h2 class="text-lg font-semibold mb-4">Summary</h2>
                     <div class="flex justify-between mb-2">
                         <span>Subtotal</span>
-                        <span> {{ Number::currency($grand_total, 'USD') }} </span>
+                        <span> {{ number_format($grand_total, 0, ',', '.') }}đ </span>
                     </div>
                     <div class="flex justify-between mb-2">
                         <span>Taxes</span>
-                        <span> {{ Number::currency(0, 'USD') }} </span>
+                        <span> {{ 0 }}đ </span>
                     </div>
                     <div class="flex justify-between mb-2">
                         <span>Shipping</span>
-                        <span> {{ Number::currency(0, 'USD') }} </span>
+                        <span> {{ 0 }}đ </span>
                     </div>
                     <hr class="my-2">
                     <div class="flex justify-between mb-2">
                         <span class="font-semibold">Grand Total</span>
-                        <span class="font-semibold"> {{ Number::currency($grand_total, 'USD') }} </span>
+                        <span class="font-semibold">
+                            {{ number_format($grand_total, 0, ',', '.') }}đ
+                        </span>
                     </div>
                     @if($cart_items)
                         <a href="/checkout" class="bg-yellow-400 block text-center hover:bg-yellow-500 text-white py-2 px-4 rounded-lg mt-4 w-full">Checkout</a>
