@@ -82,7 +82,7 @@
 
                         @auth
                             <div
-                                class="hs-dropdown [--strategy:static] md:[--strategy:fixed] [--adaptive:none] md:[--trigger:hover] md:py-4">
+                                class="hs-dropdown [--trigger:hover] md:py-4">
                                 <button type="button"
                                     class="flex items-center w-full text-gray-500 hover:text-gray-400 font-medium dark:text-gray-400 dark:hover:text-gray-500">
                                     {{ auth()->user()->name }}

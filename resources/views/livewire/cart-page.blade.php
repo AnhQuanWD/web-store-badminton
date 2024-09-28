@@ -1,4 +1,7 @@
 <div class="w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto">
+    <div id="breadcrumbs">
+        <livewire:breadcrumb :breadcrumbs="$breadcrumbs" />
+    </div>
     <div class="container mx-auto px-4">
         <h1 class="text-2xl font-semibold mb-4">Shopping Cart</h1>
         <div class="flex flex-col md:flex-row gap-4">
@@ -80,7 +83,7 @@
                         </span>
                     </div>
                     @if($cart_items)
-                        <a href="/checkout" class="bg-yellow-400 block text-center hover:bg-yellow-500 text-white py-2 px-4 rounded-lg mt-4 w-full">Checkout</a>
+                        <a href="/checkout" class="bg-yellow-400 block text-center hover:bg-yellow-500 text-black font-semibold py-2 px-4 rounded-lg mt-4 w-full">Checkout</a>
                     @endif
                 </div>
             </div>

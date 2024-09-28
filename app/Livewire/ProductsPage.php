@@ -12,6 +12,7 @@ use Livewire\Attributes\Url;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
+use Livewire\Breadcrumb;
 
 #[Title('Products Page')]
 class ProductsPage extends Component
@@ -82,10 +83,16 @@ class ProductsPage extends Component
             $productsQuery->orderBy('price');
         }
 
+        $breadcrumbs = [
+            ['name' => 'Home', 'url' => url('/')],
+            ['name' => 'Products', 'url' => url('/products')],
+        ];
+
         return view('livewire.products-page', [
             'products' => $productsQuery->paginate(8),
             'brands' => Brand::where('is_active', 1,)->get(['id', 'name', 'slug']),
             'categories' => Category::where('is_active', 1)->get(['id', 'name', 'slug']),
+            'breadcrumbs' => $breadcrumbs,
         ]);
     }
 }

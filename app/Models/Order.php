@@ -55,4 +55,9 @@ class Order extends Model
     public function address(){
        return $this->hasOne(Address::class);
     }
+
+    public function orderItems()
+    {
+        return $this->hasMany(OrderItem::class);
+    }
 }

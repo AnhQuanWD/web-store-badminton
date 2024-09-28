@@ -1,4 +1,7 @@
 <div class="w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto">
+    <div id="breadcrumbs">
+        <livewire:breadcrumb :breadcrumbs="$breadcrumbs" />
+    </div>
     <h1 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">
         Checkout
     </h1>
@@ -212,7 +215,7 @@
                     </hr>
                 </div>
                 <button type='submit'
-                    class="bg-green-500 mt-4 w-full p-3 rounded-lg text-lg text-white hover:bg-green-600">
+                    class="bg-yellow-500 mt-4 w-full p-3 rounded-lg text-lg text-black font-semibold hover:bg-yellow-600">
                     <span wire:loading.remove>Place Order</span>
                     <span wire:loading>Processing...</span>
                 </button>

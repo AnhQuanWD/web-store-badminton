@@ -36,6 +36,14 @@ class CartPage extends Component
 
     public function render()
     {
-        return view('livewire.cart-page');
+        $breadcrumbs = [
+            ['name' => 'Home', 'url' => url('/')],
+            ['name' => 'Products', 'url' => url('/products')],
+            ['name' => 'Cart', 'url' => url('/cart')]
+        ];
+
+        return view('livewire.cart-page',[
+            'breadcrumbs' => $breadcrumbs,
+        ]);
     }
 }

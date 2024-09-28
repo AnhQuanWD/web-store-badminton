@@ -17,7 +17,8 @@ class SuccessPage extends Component
 
     public function render()
     {
-        $latest_order = Order::with('address')->where('user_id', auth()->user()->id)->latest()->first();
+        // $latest_order = Order::with('address')->where('user_id', auth()->user()->id)->latest()->first();
+        $latest_order = Order::with('orderItems.product')->where('user_id', auth()->user()->id)->latest()->first();
 
         if($this->session_id){
             Stripe::setApiKey(env('STRIPE_SECRET'));
@@ -31,10 +32,22 @@ class SuccessPage extends Component
                 $latest_order->payment_status = 'paid';
                 $latest_order->save();
             }
+
         }
+
+        
+        $products = $latest_order->orderItems->map(function ($item) {
+            return [
+                'name' => $item->product->name,
+                'quantity' => $item->quantity,
+                'price' => $item->unit_amount,
+                'total_amount' => $item->total_amount,
+            ];
+        });
 
         return view('livewire.success-page', [
             'order' => $latest_order,
+            'products' => $products,
         ]);
     }
 }

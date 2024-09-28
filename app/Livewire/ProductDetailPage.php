@@ -47,8 +47,22 @@ class ProductDetailPage extends Component
 
     public function render()
     {
+        $product = Product::where('slug', $this->slug)->firstOrFail();
+        $breadcrumbs = [
+            ['name' => 'Home', 'url' => url('/')],
+            ['name' => 'Products', 'url' => url('/products')],
+            ['name' => $product->name, 'url' => url("/products/{$product->slug}")]
+        ];
+
+        $relatedProducts = Product::where('category_id', $product->category_id)
+        ->where('id', '!=', $product->id) // Exclude the current product
+        ->limit(4) // Adjust the limit as needed
+        ->get();
+
         return view('livewire.product-detail-page', [
             'product' => Product::where('slug', $this->slug)->firstOrFail(),
+            'breadcrumbs' => $breadcrumbs,
+            'relatedProducts' => $relatedProducts,
         ]);
     }
 }
