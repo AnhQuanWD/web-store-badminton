@@ -1,19 +1,19 @@
 <div>
-    <div class="w-full bg-gradient-to-r  to-yellow-200 py-10 px-4 sm:px-6 lg:px-8 mx-auto banner-custome">
+    <div class="w-full h-screen bg-gradient-to-r from-yellow-100 to-yellow-200 py-10 px-4 sm:px-6 lg:px-8 mx-auto">
         <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Grid -->
             <div class="grid md:grid-cols-2 gap-4 md:gap-8 xl:gap-20 md:items-center">
                 <div>
                     <h1
                         class="block text-3xl font-bold text-gray-800 sm:text-4xl lg:text-6xl lg:leading-tight dark:text-white">
-                        Welcome to my <span class="text-yellow-400">Badminton Store</span></h1>
+                        Welcome to my <span class="text-yellow-400">BananaStore</span></h1>
                     <p class="mt-3 text-lg text-gray-800 dark:text-gray-400">Purchase wide varities of electronics
                         products
                         like Smartphones, Laptops, Smartwatches, Television and many more.</p>
 
                     <!-- Buttons -->
                     <div class="mt-7 grid gap-3 w-full sm:inline-flex">
-                        <a class="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-yellow-500 text-white hover:bg-yellow-400 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                        <a class="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                             href="/register">
                             Get started
                             <svg class="flex-shrink-0 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24"
@@ -159,15 +159,15 @@
                 <!-- End Col -->
 
                 <div class="relative ms-4">
-                    {{-- <img class="w-full rounded-md"
+                    <img class="w-full rounded-md"
                         src="https://static.vecteezy.com/system/resources/previews/011/993/278/non_2x/3d-render-online-shopping-bag-using-credit-card-or-cash-for-future-use-credit-card-money-financial-security-on-mobile-3d-application-3d-shop-purchase-basket-retail-store-on-e-commerce-free-png.png"
-                        alt="Image Description"> --}}
+                        alt="Image Description">
                     <div
                         class="absolute inset-0 -z-[1] bg-gradient-to-tr from-gray-200 via-white/0 to-white/0 w-full h-full rounded-md mt-4 -mb-4 me-4 -ms-4 lg:mt-6 lg:-mb-6 lg:me-6 lg:-ms-6 dark:from-slate-800 dark:via-slate-900/0 dark:to-slate-900/0">
                     </div>
 
                     <!-- SVG-->
-                    {{-- <div class="absolute bottom-0 start-0">
+                    <div class="absolute bottom-0 start-0">
                         <svg class="w-2/3 ms-auto h-auto text-white dark:text-slate-900" width="630"
                             height="451" viewBox="0 0 630 451" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="531" y="352" width="99" height="99" fill="currentColor" />
@@ -188,7 +188,7 @@
                             <rect x="507" y="124" width="49" height="24" fill="currentColor" />
                             <rect x="531" y="49" width="99" height="99" fill="currentColor" />
                         </svg>
-                    </div> --}}
+                    </div>
                     <!-- End SVG-->
                 </div>
                 <!-- End Col -->
@@ -358,7 +358,7 @@
                                     <a href="#">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor"
-                                            class="w-4 mr-1 text-yellow-400 dark:text-blue-400 bi bi-star-fill"
+                                            class="w-4 mr-1 text-blue-500 dark:text-blue-400 bi bi-star-fill"
                                             viewBox="0 0 16 16">
                                             <path
                                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
@@ -370,7 +370,7 @@
                                     <a href="#">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor"
-                                            class="w-4 mr-1 text-yellow-400 dark:text-blue-400 bi bi-star-fill"
+                                            class="w-4 mr-1 text-blue-500 dark:text-blue-400 bi bi-star-fill"
                                             viewBox="0 0 16 16">
                                             <path
                                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
@@ -382,7 +382,7 @@
                                     <a href="#">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor"
-                                            class="w-4 mr-1 text-yellow-400 dark:text-blue-400 bi bi-star-fill"
+                                            class="w-4 mr-1 text-blue-500 dark:text-blue-400 bi bi-star-fill"
                                             viewBox="0 0 16 16">
                                             <path
                                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
@@ -394,7 +394,7 @@
                                     <a href="#">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor"
-                                            class="w-4 mr-1 text-yellow-400 dark:text-blue-400 bi bi-star-fill"
+                                            class="w-4 mr-1 text-blue-500 dark:text-blue-400 bi bi-star-fill"
                                             viewBox="0 0 16 16">
                                             <path
                                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
@@ -466,7 +466,7 @@
                                     <a href="#">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor"
-                                            class="w-4 mr-1 text-yellow-400 dark:text-blue-400 bi bi-star-fill"
+                                            class="w-4 mr-1 text-blue-500 dark:text-blue-400 bi bi-star-fill"
                                             viewBox="0 0 16 16">
                                             <path
                                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
@@ -478,7 +478,7 @@
                                     <a href="#">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor"
-                                            class="w-4 mr-1 text-yellow-400 dark:text-blue-400 bi bi-star-fill"
+                                            class="w-4 mr-1 text-blue-500 dark:text-blue-400 bi bi-star-fill"
                                             viewBox="0 0 16 16">
                                             <path
                                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
@@ -490,7 +490,7 @@
                                     <a href="#">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor"
-                                            class="w-4 mr-1 text-yellow-400 dark:text-blue-400 bi bi-star-fill"
+                                            class="w-4 mr-1 text-blue-500 dark:text-blue-400 bi bi-star-fill"
                                             viewBox="0 0 16 16">
                                             <path
                                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
@@ -502,7 +502,7 @@
                                     <a href="#">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor"
-                                            class="w-4 mr-1 text-yellow-400 dark:text-blue-400 bi bi-star-fill"
+                                            class="w-4 mr-1 text-blue-500 dark:text-blue-400 bi bi-star-fill"
                                             viewBox="0 0 16 16">
                                             <path
                                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
@@ -572,7 +572,7 @@
                                     <a href="#">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor"
-                                            class="w-4 mr-1 text-yellow-400 dark:text-blue-400 bi bi-star-fill"
+                                            class="w-4 mr-1 text-blue-500 dark:text-blue-400 bi bi-star-fill"
                                             viewBox="0 0 16 16">
                                             <path
                                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
@@ -584,7 +584,7 @@
                                     <a href="#">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor"
-                                            class="w-4 mr-1 text-yellow-400 dark:text-blue-400 bi bi-star-fill"
+                                            class="w-4 mr-1 text-blue-500 dark:text-blue-400 bi bi-star-fill"
                                             viewBox="0 0 16 16">
                                             <path
                                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
@@ -596,7 +596,7 @@
                                     <a href="#">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor"
-                                            class="w-4 mr-1 text-yellow-400 dark:text-blue-400 bi bi-star-fill"
+                                            class="w-4 mr-1 text-blue-500 dark:text-blue-400 bi bi-star-fill"
                                             viewBox="0 0 16 16">
                                             <path
                                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
@@ -608,7 +608,7 @@
                                     <a href="#">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor"
-                                            class="w-4 mr-1 text-yellow-400 dark:text-blue-400 bi bi-star-fill"
+                                            class="w-4 mr-1 text-blue-500 dark:text-blue-400 bi bi-star-fill"
                                             viewBox="0 0 16 16">
                                             <path
                                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
@@ -678,7 +678,7 @@
                                     <a href="#">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor"
-                                            class="w-4 mr-1 text-yellow-400 dark:text-blue-400 bi bi-star-fill"
+                                            class="w-4 mr-1 text-blue-500 dark:text-blue-400 bi bi-star-fill"
                                             viewBox="0 0 16 16">
                                             <path
                                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
@@ -690,7 +690,7 @@
                                     <a href="#">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor"
-                                            class="w-4 mr-1 text-yellow-400 dark:text-blue-400 bi bi-star-fill"
+                                            class="w-4 mr-1 text-blue-500 dark:text-blue-400 bi bi-star-fill"
                                             viewBox="0 0 16 16">
                                             <path
                                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
@@ -702,7 +702,7 @@
                                     <a href="#">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor"
-                                            class="w-4 mr-1 text-yellow-400 dark:text-blue-400 bi bi-star-fill"
+                                            class="w-4 mr-1 text-blue-500 dark:text-blue-400 bi bi-star-fill"
                                             viewBox="0 0 16 16">
                                             <path
                                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
@@ -714,7 +714,7 @@
                                     <a href="#">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor"
-                                            class="w-4 mr-1 text-yellow-400 dark:text-blue-400 bi bi-star-fill"
+                                            class="w-4 mr-1 text-blue-500 dark:text-blue-400 bi bi-star-fill"
                                             viewBox="0 0 16 16">
                                             <path
                                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">

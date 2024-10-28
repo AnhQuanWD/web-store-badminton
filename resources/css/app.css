@@ -61,7 +61,7 @@
 }
 
 .container-invoice .info-store{
-    width: 60%;
+    width: 50%;
     margin: auto;
     text-align: center;
 }
@@ -97,24 +97,4 @@
     height: 1px;
     border: 0;
     margin: 10px 0;
-}
-
-/* .banner-custome{
-    background: url('public/images/banner-home.jpg');
-} */
-
-#pagination_wrapper nav div:nth-child(1){
-    display: none;
-}
-
-#pagination_wrapper nav>div:nth-child(2) .relative.z-0.inline-flex{
-    gap: 5px;
-}
-
-#order_pagination nav div:nth-child(1){
-    display: none;
-}
-
-#order_pagination nav>div:nth-child(2) .relative.z-0.inline-flex{
-    gap: 5px;
 }

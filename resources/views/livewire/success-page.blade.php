@@ -43,7 +43,7 @@
                     <div class="w-full px-4 mb-4 md:w-1/4">
                         <p class="mb-2 text-sm font-medium leading-5 text-gray-800 dark:text-gray-400 ">
                             Total: </p>
-                        <p class="text-base font-semibold leading-4 text-yellow-600 dark:text-gray-400">
+                        <p class="text-base font-semibold leading-4 text-blue-600 dark:text-gray-400">
                             {{ number_format($order->grand_total, 0, ',', '.') }}đ
                         </p>
                     </div>
@@ -97,7 +97,7 @@
                                     <div class="w-8 h-8">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor"
-                                            class="w-6 h-6 text-yellow-600 dark:text-blue-400 bi bi-truck"
+                                            class="w-6 h-6 text-blue-600 dark:text-blue-400 bi bi-truck"
                                             viewBox="0 0 16 16">
                                             <path
                                                 d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5v-7zm1.294 7.456A1.999 1.999 0 0 1 4.732 11h5.536a2.01 2.01 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456zM12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12v4zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z">
@@ -120,31 +120,26 @@
                 </div>
                 <div class="flex items-center justify-start gap-4 px-4 mt-6 ">
                     <a href="/products"
-                        class="w-full text-center px-4 py-2 text-yellow-500 border border-yellow-500 rounded-md md:w-auto hover:text-white hover:bg-yellow-400 dark:border-gray-700 dark:hover:bg-gray-700 dark:text-gray-300">
+                        class="w-full text-center px-4 py-2 text-blue-500 border border-blue-500 rounded-md md:w-auto hover:text-white hover:bg-blue-600 dark:border-gray-700 dark:hover:bg-gray-700 dark:text-gray-300">
                         Go back shopping
                     </a>
                     <a href="/my-orders"
-                        class="w-full text-center px-4 py-2 bg-yellow-500 rounded-md text-gray-50 md:w-auto dark:text-gray-300 hover:bg-yellow-400 dark:hover:bg-gray-700 dark:bg-gray-800">
+                        class="w-full text-center px-4 py-2 bg-blue-500 rounded-md text-gray-50 md:w-auto dark:text-gray-300 hover:bg-blue-600 dark:hover:bg-gray-700 dark:bg-gray-800">
                         View My Orders
-                    </a>
-                    <a href="javascript:void(0);"
-                        id="viewInvoiceBtn"
-                        class="w-full text-center px-4 py-2 bg-yellow-500 rounded-md text-gray-50 md:w-auto dark:text-gray-300 hover:bg-yellow-400 dark:hover:bg-gray-700 dark:bg-gray-800">
-                        View Invoice
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    {{-- <section class="flex items-center font-poppins dark:bg-gray-800 ">
+    <section class="flex items-center font-poppins dark:bg-gray-800 ">
         <div
             class="justify-center flex-1 max-w-6xl px-4 py-4 mx-auto bg-white border rounded-md dark:border-gray-900 dark:bg-gray-900 md:py-10 md:px-10">
             <div class="container-invoice">
                 <div class="info-store">
-                    <h1 class="text-3xl font-bold"> Badminton Store </h1>
+                    <h1 class="text-3xl font-bold"> Banana Store </h1>
                     <h3> Address: Inspace </h3>
-                    <h3> Number: 00.02.10.1999 </h3>
+                    <h3> Number: 00 02 10 1999 </h3>
                 </div>
                 <hr>
                 <div class="info-invoice">
@@ -188,63 +183,5 @@
                 </div>
             </div>
         </div>
-    </section> --}}
-
-    <div id="invoicePopup" class="hidden fixed inset-0 z-50 justify-center items-center">
-        <div class="overlay absolute inset-0 bg-gray-900 opacity-50"></div>
-        <section class="relative z-10 flex items-center font-poppins dark:bg-gray-800">
-            <div
-                class="justify-center flex-1 max-w-6xl px-4 py-4 mx-auto bg-white border rounded-md dark:border-gray-900 dark:bg-gray-900 md:py-10 md:px-10" style="min-width:1000px;">
-                <div class="container-invoice">
-                    <div class="info-store">
-                        <h1 class="text-3xl font-bold">Badminton Store</h1>
-                        <h3>Address: Inspace</h3>
-                        <h3>Number: 00.02.10.1999</h3>
-                    </div>
-                    <hr>
-                    <div class="info-invoice">
-                        <h1 class="text-2xl text-center font-semibold mb-2">Sales Invoice</h1>
-                        <div class="info-invoice-date mb-2">
-                            <p>Date: <span class="font-medium">{{ $order->created_at->format('d/m/Y') }}</span></p>
-                            <p>Order Number: <span class="font-medium">{{ $order->id }}</span></p>
-                        </div>
-                        <div class="info-invoice-name mb-2">
-                            <p>Customer: <span class="font-medium">{{ $order->address->first_name }} {{ $order->address->last_name }}</span></p>
-                        </div>
-                        <div class="info-invoice-products mb-2">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <td>Products</td>
-                                        <td>Quantity</td>
-                                        <td>Price</td>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($products as $product)
-                                    <tr>
-                                        <td>{{ $product['name'] }}</td>
-                                        <td>{{ $product['quantity'] }}</td>
-                                        <td>{{ number_format($product['total_amount'], 0, ',', '.') }} VNĐ</td>
-                                    </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        </div>
-                        <hr>
-                        <div class="info-invoice-total mb-5">
-                            <p>Discount: <span class="font-semibold">0 VNĐ</span></p>
-                            <p>Shipping: <span class="font-semibold">0 VNĐ</span></p>
-                            <p>Total: <span class="font-semibold">{{ number_format($order->grand_total, 0, ',', '.') }} VNĐ</span></p>
-                        </div>
-                        <div class="info-invoice-thankyou text-center">
-                            <p class="font-bold italic">Thank you. Your order has been received.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Close Button -->
-            <button id="closePopup" class="absolute top-0 right-0 mt-2 mr-2 text-black bg-yellow-400 px-3 py-1 rounded-full">X</button>
-        </section>
-    </div>
+    </section>
 </div>

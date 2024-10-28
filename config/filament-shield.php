@@ -29,11 +29,6 @@ return [
         'name' => 'panel_user',
     ],
 
-    'shipper' => [
-        'enabled' => true,
-        'name' => 'shipper',
-    ],
-
     'customer' => [
         'enabled' => true,
         'name' => 'customer',
