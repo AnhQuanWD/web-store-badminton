@@ -61,7 +61,9 @@
                                         class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">
                                         {{ $order->id }} </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
-                                        {{ $order->created_at->format('d-m-y') }}</td>
+                                        {{ $order->created_at->format('d-m-y') }}
+                                        
+                                    </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
                                         {!! $status !!}
                                     </td>
@@ -69,7 +71,9 @@
                                         {!! $payment_status !!}
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
-                                        {{ Number::currency($order->grand_total, 'USD') }} </td>
+                                        {{-- {{ Number::currency($order->grand_total, 'USD') }}  --}}
+                                        {{ number_format($order->grand_total, 0, ',', '.') }}đ
+                                    </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
                                         <a href="/my-orders/{{ $order->id }}"
                                             class="bg-slate-600 text-white py-2 px-4 rounded-md hover:bg-slate-500">View
@@ -82,7 +86,9 @@
                     </table>
                 </div>
             </div>
-            {{ $orders->links() }}
+            <div id="order_pagination" class="flex justify-center">
+                {{ $orders->links() }}
+            </div>
         </div>
     </div>
 </div>

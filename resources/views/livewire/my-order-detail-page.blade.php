@@ -187,13 +187,15 @@
                                     </div>
                                 </td>
                                 <td class="py-4">
-                                    {{ Number::currency($item->unit_amount, 'USD') }}
+                                    {{-- {{ Number::currency($item->unit_amount, 'USD') }} --}}
+                                    {{ number_format($item->unit_amount, 0, ',', '.') }}đ
                                 </td>
                                 <td class="py-4">
                                     <span class="text-center w-8"> {{ $item->quantity }} </span>
                                 </td>
                                 <td class="py-4">
-                                    {{ Number::currency($item->total_amount, 'USD') }}
+                                    {{-- {{ Number::currency($item->total_amount, 'USD') }} --}}
+                                    {{ number_format($item->total_amount, 0, ',', '.') }}đ
                                 </td>
                             </tr>
                         @endforeach
@@ -223,20 +225,26 @@
                 <h2 class="text-lg font-semibold mb-4">Summary</h2>
                 <div class="flex justify-between mb-2">
                     <span>Subtotal</span>
-                    <span> {{ Number::currency($item->order->grand_total, 'USD') }} </span>
+                    <span> 
+                        {{-- {{ Number::currency($item->order->grand_total, 'USD') }}  --}}
+                        {{ number_format($item->order->grand_total, 0, ',', '.') }}đ
+                    </span>
                 </div>
                 <div class="flex justify-between mb-2">
                     <span>Taxes</span>
-                    <span>₹0.00</span>
+                    <span>0đ</span>
                 </div>
                 <div class="flex justify-between mb-2">
                     <span>Shipping</span>
-                    <span>₹0.00</span>
+                    <span>0đ</span>
                 </div>
                 <hr class="my-2">
                 <div class="flex justify-between mb-2">
                     <span class="font-semibold">Grand Total</span>
-                    <span class="font-semibold"> {{ Number::currency($item->order->grand_total, 'USD') }} </span>
+                    <span class="font-semibold"> 
+                        {{-- {{ Number::currency($item->order->grand_total, 'USD') }}  --}}
+                        {{ number_format($item->order->grand_total, 0, ',', '.') }}đ
+                    </span>
                 </div>
 
             </div>
