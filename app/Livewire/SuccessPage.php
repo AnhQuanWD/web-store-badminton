@@ -32,10 +32,30 @@ class SuccessPage extends Component
                 $latest_order->payment_status = 'paid';
                 $latest_order->save();
             }
-
         }
 
-        
+        $request = request(); // Lấy request để xử lý từ VNPay
+        $orderId = $request->input('vnp_TxnRef'); // Mã đơn hàng
+        $responseCode = $request->input('vnp_ResponseCode'); // Mã phản hồi từ VNPay
+        $paymentDate = $request->input('vnp_PayDate'); // Ngày thanh toán
+
+        if ($orderId) {
+            // Tìm đơn hàng dựa trên mã đơn hàng
+            $latest_order = Order::where('id', $orderId)->first();
+
+            if ($latest_order) {
+                // Kiểm tra mã phản hồi từ VNPay
+                if ($responseCode == '00') { // Mã 00 có nghĩa là thanh toán thành công
+                    $latest_order->payment_status = 'paid';
+                    // $latest_order->payment_date = $paymentDate; // Lưu ngày thanh toán nếu cần
+                } else {
+                    $latest_order->payment_status = 'failed'; // Nếu không thành công
+                }
+
+                $latest_order->save(); // Lưu thay đổi vào cơ sở dữ liệu
+            }
+        }
+
         $products = $latest_order->orderItems->map(function ($item) {
             return [
                 'name' => $item->product->name,

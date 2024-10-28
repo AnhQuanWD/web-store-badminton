@@ -4,11 +4,12 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>{{ $title ?? 'Banana Store Badminton' }}</title>
+        <title>{{ $title ?? 'Store Badminton' }}</title>
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         @livewireStyles
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
         <link rel="stylesheet" href="/css/style.css">
+        <link rel="shortcut icon" type="image/png" href="/images/icon-bad.ico"/>
     </head>
     <body class="bg-slate-200 dark:bg-slate-700">
         @livewire('partials.navbar')

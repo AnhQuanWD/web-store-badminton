@@ -1,0 +1,790 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API Documentation",
+        "description": "API documentation for the project",
+        "contact": {
+            "email": "support@example.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/register": {
+            "post": {
+                "tags": [
+                    "Authentication"
+                ],
+                "summary": "Register a new user",
+                "operationId": "8e4e3cb7b46126f4696379d3c7eeb4ad",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "John Doe"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email",
+                                        "example": "johndoe@example.com"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "format": "password",
+                                        "example": "password"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "User created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "email": {
+                                            "type": "string"
+                                        },
+                                        "created_at": {
+                                            "type": "string",
+                                            "format": "date-time"
+                                        },
+                                        "updated_at": {
+                                            "type": "string",
+                                            "format": "date-time"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "errors": {
+                                            "properties": {
+                                                "field_name": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "string",
+                                                        "example": "The field_name field is required."
+                                                    }
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/login": {
+            "post": {
+                "tags": [
+                    "Authentication"
+                ],
+                "summary": "User login",
+                "description": "Returns user auth token",
+                "operationId": "loginUser",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "email",
+                                    "password"
+                                ],
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email",
+                                        "example": "user@example.com"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "format": "password",
+                                        "example": "password"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful login",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "access_token": {
+                                            "type": "string"
+                                        },
+                                        "token_type": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Invalid credentials",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Thông tin đăng nhập không chính xác."
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/password/forgot": {
+            "post": {
+                "tags": [
+                    "Authentication"
+                ],
+                "summary": "Request password reset link",
+                "description": "Send password reset link to user email",
+                "operationId": "sendResetLinkEmail",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "email"
+                                ],
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email",
+                                        "example": "user@example.com"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Reset link sent",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid email",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/password/reset": {
+            "post": {
+                "tags": [
+                    "Authentication"
+                ],
+                "summary": "Reset password",
+                "description": "Reset password using token",
+                "operationId": "resetPassword",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "token",
+                                    "email",
+                                    "password",
+                                    "password_confirmation"
+                                ],
+                                "properties": {
+                                    "token": {
+                                        "type": "string",
+                                        "example": "abcdef"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email",
+                                        "example": "user@example.com"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "format": "password",
+                                        "example": "newpassword"
+                                    },
+                                    "password_confirmation": {
+                                        "type": "string",
+                                        "format": "password",
+                                        "example": "newpassword"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Password reset successful",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid input",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Password reset failed",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/orders": {
+            "post": {
+                "tags": [
+                    "Orders"
+                ],
+                "summary": "Create a new order",
+                "operationId": "2123ba58dadb22bd6f2c8081af562230",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "user_id",
+                                    "first_name",
+                                    "last_name",
+                                    "phone",
+                                    "street_address",
+                                    "city",
+                                    "state",
+                                    "zip_code",
+                                    "payment_method",
+                                    "currency",
+                                    "shipping_amount",
+                                    "items"
+                                ],
+                                "properties": {
+                                    "user_id": {
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "first_name": {
+                                        "type": "string",
+                                        "example": "John"
+                                    },
+                                    "last_name": {
+                                        "type": "string",
+                                        "example": "Doe"
+                                    },
+                                    "phone": {
+                                        "type": "string",
+                                        "example": "+123456789"
+                                    },
+                                    "street_address": {
+                                        "type": "string",
+                                        "example": "123 Main St"
+                                    },
+                                    "city": {
+                                        "type": "string",
+                                        "example": "New York"
+                                    },
+                                    "state": {
+                                        "type": "string",
+                                        "example": "NY"
+                                    },
+                                    "zip_code": {
+                                        "type": "string",
+                                        "example": "10001"
+                                    },
+                                    "payment_method": {
+                                        "type": "string",
+                                        "example": "credit_card"
+                                    },
+                                    "payment_status": {
+                                        "type": "string",
+                                        "example": "pending"
+                                    },
+                                    "currency": {
+                                        "type": "string",
+                                        "example": "USD"
+                                    },
+                                    "shipping_amount": {
+                                        "type": "number",
+                                        "example": 10.5
+                                    },
+                                    "shipping_method": {
+                                        "type": "string",
+                                        "example": "UPS"
+                                    },
+                                    "notes": {
+                                        "type": "string",
+                                        "example": "Please deliver between 9AM-5PM"
+                                    },
+                                    "items": {
+                                        "type": "array",
+                                        "items": {
+                                            "properties": {
+                                                "product_id": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                },
+                                                "quantity": {
+                                                    "type": "integer",
+                                                    "example": 2
+                                                },
+                                                "price": {
+                                                    "type": "number",
+                                                    "example": 15.5
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Order created"
+                    },
+                    "400": {
+                        "description": "Validation error"
+                    }
+                }
+            }
+        },
+        "/api/orders/{userId}": {
+            "get": {
+                "tags": [
+                    "Orders"
+                ],
+                "summary": "Get all orders for a specific user",
+                "description": "Returns all orders and their items for the specified user",
+                "operationId": "getUserOrders",
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Order"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "User not found"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
+        },
+        "/api/products": {
+            "get": {
+                "tags": [
+                    "Products"
+                ],
+                "summary": "Get list of products",
+                "description": "Returns list of products",
+                "operationId": "getProductsList",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Page number",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "current_page": {
+                                            "type": "integer"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/Product"
+                                            }
+                                        },
+                                        "first_page_url": {
+                                            "type": "string"
+                                        },
+                                        "from": {
+                                            "type": "integer"
+                                        },
+                                        "last_page": {
+                                            "type": "integer"
+                                        },
+                                        "last_page_url": {
+                                            "type": "string"
+                                        },
+                                        "next_page_url": {
+                                            "type": "string"
+                                        },
+                                        "path": {
+                                            "type": "string"
+                                        },
+                                        "per_page": {
+                                            "type": "integer"
+                                        },
+                                        "prev_page_url": {
+                                            "type": "string"
+                                        },
+                                        "to": {
+                                            "type": "integer"
+                                        },
+                                        "total": {
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/api/products/{id}": {
+            "get": {
+                "tags": [
+                    "Products"
+                ],
+                "summary": "Get product information",
+                "description": "Returns product data",
+                "operationId": "getProductById",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Product ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Product"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Product not found"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Order": {
+                "title": "Order",
+                "required": [
+                    "user_id",
+                    "grand_total",
+                    "payment_method",
+                    "currency",
+                    "shipping_amount",
+                    "shipping_method"
+                ],
+                "properties": {
+                    "id": {
+                        "description": "Order ID",
+                        "type": "integer"
+                    },
+                    "user_id": {
+                        "description": "User ID",
+                        "type": "integer"
+                    },
+                    "grand_total": {
+                        "description": "Order total amount",
+                        "type": "number",
+                        "format": "float"
+                    },
+                    "payment_method": {
+                        "description": "Payment method",
+                        "type": "string"
+                    },
+                    "payment_status": {
+                        "description": "Payment status",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "Order status",
+                        "type": "string"
+                    },
+                    "currency": {
+                        "description": "Currency",
+                        "type": "string"
+                    },
+                    "shipping_amount": {
+                        "description": "Shipping amount",
+                        "type": "number",
+                        "format": "float"
+                    },
+                    "shipping_method": {
+                        "description": "Shipping method",
+                        "type": "string"
+                    },
+                    "notes": {
+                        "description": "Additional notes",
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "description": "Creation timestamp",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updated_at": {
+                        "description": "Update timestamp",
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                },
+                "type": "object"
+            },
+            "Product": {
+                "title": "Product",
+                "description": "Product model",
+                "required": [
+                    "name",
+                    "price",
+                    "category_id",
+                    "brand_id"
+                ],
+                "properties": {
+                    "id": {
+                        "description": "ID of the product",
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "category_id": {
+                        "description": "Category ID",
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "brand_id": {
+                        "description": "Brand ID",
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "name": {
+                        "description": "Product name",
+                        "type": "string",
+                        "example": "Product name"
+                    },
+                    "slug": {
+                        "description": "Product slug",
+                        "type": "string",
+                        "example": "product-name"
+                    },
+                    "images": {
+                        "description": "Product images",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "example": [
+                            "image1.jpg",
+                            "image2.jpg"
+                        ]
+                    },
+                    "description": {
+                        "description": "Product description",
+                        "type": "string",
+                        "example": "Product description"
+                    },
+                    "price": {
+                        "description": "Product price",
+                        "type": "number",
+                        "format": "float",
+                        "example": 100
+                    },
+                    "is_active": {
+                        "description": "Is product active",
+                        "type": "boolean",
+                        "example": true
+                    },
+                    "is_featured": {
+                        "description": "Is product featured",
+                        "type": "boolean",
+                        "example": false
+                    },
+                    "in_stock": {
+                        "description": "Is product in stock",
+                        "type": "boolean",
+                        "example": true
+                    },
+                    "on_sale": {
+                        "description": "Is product on sale",
+                        "type": "boolean",
+                        "example": false
+                    },
+                    "created_at": {
+                        "description": "Created at timestamp",
+                        "type": "string",
+                        "format": "date-time",
+                        "example": "2023-01-01T00:00:00.000000Z"
+                    },
+                    "updated_at": {
+                        "description": "Updated at timestamp",
+                        "type": "string",
+                        "format": "date-time",
+                        "example": "2023-01-01T00:00:00.000000Z"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Authentication",
+            "description": "Authentication"
+        },
+        {
+            "name": "Orders",
+            "description": "Orders"
+        },
+        {
+            "name": "Products",
+            "description": "Products"
+        }
+    ]
+}
